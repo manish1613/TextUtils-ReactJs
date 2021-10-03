@@ -52,16 +52,16 @@ export default function TextForm(props) {
                 <div className="mb-3">
                     <textarea className="form-control" value={text} onChange={handleOnChange} style={{backgroundColor: props.mode==='dark'?'#13466e':'white', color: props.mode==='dark'?'white':'#042743'}} id="myBox" rows="8"></textarea>
                 </div>
-                <button className="btn btn-outline-success bg-dark mx-1" onClick={handleUpClick}>Convert lower To Upper case</button>
-                <button className="btn btn-outline-success bg-dark mx-1" onClick={handleLoClick}>Convert Upper To Lower case</button>
-                <button className="btn btn-outline-success bg-dark mx-1" onClick={handleClickClear}>Clear Text</button>
-                <button className="btn btn-outline-success bg-dark mx-1" onClick={handleCopy}>Copy Text</button>
-                <button className="btn btn-outline-success bg-dark mx-1" onClick={handleExtraSpaces}>Remove extra spaces</button>
+                <button className="btn btn-outline-success bg-dark mx-1 my-1" onClick={handleUpClick}>Convert lower To Upper case</button>
+                <button className="btn btn-outline-success bg-dark mx-1 my-1" onClick={handleLoClick}>Convert Upper To Lower case</button>
+                <button className="btn btn-outline-success bg-dark mx-1 my-1" onClick={handleClickClear}>Clear Text</button>
+                <button className="btn btn-outline-success bg-dark mx-1 my-1" onClick={handleCopy}>Copy Text</button>
+                <button className="btn btn-outline-success bg-dark mx-1 my-1" onClick={handleExtraSpaces}>Remove extra spaces</button>
             </div>
 
             <div className="container my-3" style={{color: props.mode==='dark'?'white':'#042743'}}>
                 <h2>Your Text Summary</h2>
-                <p><b>{text.split(" ").length}</b> Words and <b>{text.length} </b> Characters</p>
+                <p><b>{text.split(" ").filter((element)=>{return element.length!==0}).length}</b> Words and <b>{text.length} </b> Characters</p>
 
                 <h2>Preview</h2>
                 <p>{text.length>0?text:"Nothing to preview!"}</p>
